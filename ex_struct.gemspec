@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "ex_struct.gemspec",
     "lib/ex_struct.rb",
     "test/helper.rb",
     "test/test_ex_struct.rb"
