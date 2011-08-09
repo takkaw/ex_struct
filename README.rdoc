@@ -1,6 +1,12 @@
 = ex_struct
+ExStruct is expandable OpenStruct.
 
-Description goes here.
+== Usage
+  require 'ex_struct'
+  foo = ExStruct.new
+  foo.bar.baz = :hello
+
+  foo.bar.baz? # => :hello
 
 == Contributing to ex_struct
  
