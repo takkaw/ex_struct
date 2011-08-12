@@ -1,6 +1,10 @@
 require 'helper'
 
 class TestExStruct < Test::Unit::TestCase
+  should "initialize with hash" do
+    conf = ExStruct.new(:x => {:y => 100})
+    assert_equal conf.x.y,100
+  end
   should "add new method as value = 100" do
     conf = ExStruct.new
     conf.value = 100
