@@ -1,6 +1,21 @@
 require 'helper'
 
 class TestExStruct < Test::Unit::TestCase
+  should "duped object equals original" do
+    conf = ExStruct.new(:x => {:y => 100})
+    assert_equal conf,conf.dup
+  end
+  should "load dumped object" do
+    conf = ExStruct.new(:x => {:y => 100})
+    e = ExStruct.new()
+    e.marshal_load(conf.marshal_dump)
+    assert_equal e.x.y , 100
+  end
+  should "compare same object" do
+    conf1 = ExStruct.new(:x => {:y => 100})
+    conf2 = ExStruct.new(:x => {:y => 100}) 
+    assert_equal true,conf1 == conf2
+  end
   should "initialize with hash" do
     conf = ExStruct.new(:x => {:y => 100})
     assert_equal conf.x.y,100
